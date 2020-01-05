@@ -1,4 +1,5 @@
 <template>
+    <div style="height: 100%">
     <v-card style="height: 100%; overflow: hidden">
         <v-toolbar color="blue" dark>
             <v-toolbar-title>
@@ -23,16 +24,20 @@
             </v-layout>
         </v-card-actions>
     </v-card> 
+    <NotesModal/>
+    </div>
 </template>
 
 <script>
 import Task from './Task'
 import NewTask from './NewTask'
+import NotesModal from './NotesModal'
 export default {
     name: 'tasks',
     components: {
         Task,
-        NewTask
+        NewTask,
+        NotesModal
     },
     data: () => ({
         tasks: [

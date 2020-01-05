@@ -1,4 +1,5 @@
 <template>
+    <div>
     <v-card height="100%">
         <v-toolbar color="pink" dark>
             <v-toolbar-title>
@@ -53,11 +54,17 @@
             </v-list-group>
         </v-list>
     </v-card>
+    <MoreOptions/>
+    </div>
 </template>
 
 <script>
+import MoreOptions from './MoreOptions'
 export default {
     name: 'optionsBar',
+    components: {
+        MoreOptions
+    },
     data: () => ({
         items: [
             {

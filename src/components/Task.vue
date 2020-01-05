@@ -9,9 +9,9 @@
             <v-list-item-title>
                 {{task.title}}
             </v-list-item-title>
-            <v-list-item-sub-title>
+            <v-list-item-subtitle>
                 {{ task.sub_title }}
-            </v-list-item-sub-title>
+            </v-list-item-subtitle>
         </v-list-item-content>
         <v-list-item-action-text>
             <v-icon color="green" v-if="task.isComplete">check_circle</v-icon>
