@@ -11,45 +11,45 @@
              v-model="item.active"
             :prepend-icon="item.action"
             no-action>
-                <v-list-tile slot="activator">
-                    <v-list-content-tile>
-                        <v-list-tile-content>
-                            <v-list-tile-title>{{item.title}}</v-list-tile-title>
-                        </v-list-tile-content>
-                    </v-list-content-tile>
-                </v-list-tile v-for="(subItem,key) in items.items"
+                <v-list-item slot="activator">
+                    <v-list-item-content>
+                        <v-list-item-content>
+                            <v-list-item-title>{{item.title}}</v-list-item-title>
+                        </v-list-item-content>
+                    </v-list-item-content>
+                </v-list-item >
+                <v-list-item v-for="(subItem,key) in items.items"
                  :key="key" 
                  active-class
                   v-on="item.action === 'sort' ? { click: () => sort(subItem.by)} : { click: () => filter(subItem.by)}"
                   >
-                <v-list-tile>
-                    <v-list-tile-content>
-                        <v-list-tile-title>{{subItem.title}}</v-list-tile-title>
-                    </v-list-tile-content>
-                </v-list-tile>
+                    <v-list-item-content>
+                        <v-list-item-title>{{subItem.title}}</v-list-item-title>
+                    </v-list-item-content>
+                </v-list-item>
             </v-list-group>
             <v-list-group prepend-icon="filter" no-action>
-                <v-list-tile slot="activator">
-                    <v-list-tile-content>
-                        <v-list-tile-title>
+                <v-list-item slot="activator">
+                    <v-list-item-content>
+                        <v-list-item-title>
                             List options
-                        </v-list-tile-title>
-                    </v-list-tile-content>
-                </v-list-tile>
-                <v-list-tile>
-                    <v-list-tile-content>
-                        <v-list-tile-title color="danger">
+                        </v-list-item-title>
+                    </v-list-item-content>
+                </v-list-item>
+                <v-list-item>
+                    <v-list-item-content>
+                        <v-list-item-title color="danger">
                             Remove list
-                        </v-list-tile-title>
-                    </v-list-tile-content>
-                </v-list-tile>
-                <v-list-tile>
-                    <v-list-tile-content>
-                        <v-list-tile-title>
+                        </v-list-item-title>
+                    </v-list-item-content>
+                </v-list-item>
+                <v-list-item>
+                    <v-list-item-content>
+                        <v-list-item-title>
                             Change background
-                        </v-list-tile-title>
-                    </v-list-tile-content>
-                </v-list-tile>
+                        </v-list-item-title>
+                    </v-list-item-content>
+                </v-list-item>
             </v-list-group>
         </v-list>
     </v-card>

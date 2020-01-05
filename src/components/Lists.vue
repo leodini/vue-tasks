@@ -10,31 +10,31 @@
             </v-btn>
         </v-toolbar>
         <v-list>
-            <v-list-tile color="blue">
-                <v-list-tile-content>
+            <v-list-item color="blue">
+                <v-list-item-content>
                     Create new list
-                </v-list-tile-content>
-                <v-list-tile-action>
-                    <v-list-tile-title>
+                </v-list-item-content>
+                <v-list-item-action>
+                    <v-list-item-title>
                         <v-icon>add</v-icon>
-                    </v-list-tile-title>
-                </v-list-tile-action>
-            </v-list-tile>
+                    </v-list-item-title>
+                </v-list-item-action>
+            </v-list-item>
         </v-list>
         <v-divider></v-divider>
         <v-list style="height: calc(100% - 128px); overflow-y: scroll">
-            <v-list-tile v-for="(list, key) in lists" :key="key">
-                <v-list-tile-content>
-                    <v-list-tile-title>
+            <v-list-item v-for="(list, key) in lists" :key="key">
+                <v-list-item-content>
+                    <v-list-item-title>
                         {{ list.title }}
-                    </v-list-tile-title>
-                    <v-list-tile-action>
-                        <v-list-tile-title>
+                    </v-list-item-title>
+                    <v-list-item-action>
+                        <v-list-item-title>
                             {{ list.tasks }}
-                        </v-list-tile-title>
-                    </v-list-tile-action>
-                </v-list-tile-content>
-            </v-list-tile>
+                        </v-list-item-title>
+                    </v-list-item-action>
+                </v-list-item-content>
+            </v-list-item>
         </v-list>
     </v-navigation-drawer>
 </template>
