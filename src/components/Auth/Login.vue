@@ -17,11 +17,11 @@
                         </v-card-text>
                         <v-divider light></v-divider>
                         <v-card-actions>
-                            <v-btn round color="indigo" dark>
+                            <v-btn to="/signup" round color="indigo" dark>
                                 Sign up
                             </v-btn>
                             <v-spacer></v-spacer>
-                            <v-btn round color="primary" dark>
+                            <v-btn round color="primary" dark @click.prevent="login()">
                                 Login
                                 <v-icon>keyboard_arrow_right</v-icon>
                             </v-btn>
@@ -35,6 +35,11 @@
 
 <script> 
 export default {
-    name: 'login' 
+    name: 'login',
+    methods: {
+        login(){
+            this.$router.push('/')
+        }
+    }
 }
 </script>

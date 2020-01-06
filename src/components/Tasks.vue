@@ -3,7 +3,7 @@
     <v-card style="height: 100%; overflow: hidden">
         <v-toolbar color="blue" dark>
             <v-toolbar-title>
-                Title of the list
+                Title of the list {{ listId }}
             </v-toolbar-title>
             <v-spacer></v-spacer>
             <v-btn icon>
@@ -24,7 +24,8 @@
             </v-layout>
         </v-card-actions>
     </v-card> 
-    <NotesModal/>
+    <router-view :key="$route.fullPath" name="notes">
+    </router-view>
     </div>
 </template>
 
@@ -34,6 +35,11 @@ import NewTask from './NewTask'
 import NotesModal from './NotesModal'
 export default {
     name: 'tasks',
+    computed: {
+        listId(){
+            return this.$route.params.id
+        }
+    },
     components: {
         Task,
         NewTask,

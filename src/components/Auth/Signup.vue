@@ -53,9 +53,9 @@
                         </v-form>
                     </v-card-text>
                     <v-card-actions>
-                                <v-btn round color="black" dark>Sign in</v-btn>
+                                <v-btn to="/login" round color="black" dark>Sign in</v-btn>
                                 <v-spacer></v-spacer>
-                                <v-btn round color="success">
+                                <v-btn round color="success" @click.prevent="register()">
                                     Register
                                     <v-icon>keyboard_arrow_up</v-icon>
                                 </v-btn>
@@ -83,6 +83,9 @@ export default {
     methods: {
         valid() {
             return this.password === this.confirm_password
+        },
+        register(){
+            this.$router.push('/login')
         }
     }
 }

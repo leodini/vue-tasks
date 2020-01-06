@@ -23,7 +23,11 @@
         </v-list>
         <v-divider></v-divider>
         <v-list style="height: calc(100% - 128px); overflow-y: scroll">
-            <v-list-item v-for="(list, key) in lists" :key="key">
+            <v-list-item 
+            v-for="(list, key) in lists" 
+            :key="key"
+            :to="{ name: 'tasks', params: { id: list.id } }"
+            >
                 <v-list-item-content>
                     <v-list-item-title>
                         {{ list.title }}

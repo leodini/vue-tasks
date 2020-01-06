@@ -6,7 +6,7 @@
           <Lists />
         </v-flex>
         <v-flex lg6 pr-2 pl-2>
-          <Tasks />
+          <router-view name="tasks" :key="$route.fullPath"></router-view>
         </v-flex>
         <v-flex lg3 pl-2>
           <OptionsBar />
