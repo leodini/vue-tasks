@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div v-if="show">
     <v-card height="100%">
         <v-toolbar color="pink" dark>
             <v-toolbar-title>
@@ -37,7 +37,7 @@
                         </v-list-item-title>
                     </v-list-item-content>
                 </v-list-item>
-                <v-list-item>
+                <v-list-item @click="displayNotification()">
                     <v-list-item-content>
                         <v-list-item-title color="danger">
                             Remove list
@@ -45,7 +45,7 @@
                     </v-list-item-content>
                 </v-list-item>
                 <v-list-item>
-                    <v-list-item-content>
+                    <v-list-item-content @click.prevent="openDrawer()">
                         <v-list-item-title>
                             Change background
                         </v-list-item-title>
@@ -64,6 +64,11 @@ export default {
     name: 'optionsBar',
     components: {
         MoreOptions
+    },
+    computed: {
+        show(){
+            return this.$route.params.id
+        }
     },
     data: () => ({
         items: [
@@ -105,6 +110,17 @@ export default {
         },
         filter(value){
             console.log(`filter by ${value}`)
+        },
+        openDrawer(){
+            this.$store.commit('SET_DRAWER', true)
+        },
+        displayNotification(){
+            this.$store.commit('SET_NOTIFICATION', {
+                display: true,
+                alertClass: 'success',
+                timeout: 3000,
+                text: 'List Removed!'
+            })
         }
     }
 }
